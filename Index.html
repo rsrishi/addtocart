@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipt app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        #cnt{
+            padding-left: 170px;
+            margin-right: 70px;
+        }
+        #products{
+            margin-right: 110px;
+        }
+    </style>
+    <!-- Header -->
+   <header class="d-flex justify-content-center py-3 bg-dark">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="#cnt" class="nav-link">Products</a></li>
+      <li class="nav-item"><a href="#cart" class="nav-link">Cart </a></li>
+      <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+    </ul>
+  </header>
+
+<!-- carosoul -->
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark text-bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal text-light">Hello World</h1>
+      <p class="lead fw-normal text-light">The power of code is here,Thia can change the world.</p>
+      <a class="btn btn-outline-warning" href="#">Coming soon</a>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+
+  <!-- Products -->
+  <div class="container mt-3 " id="cnt"> 
+    <div class="text-center mt-5" id="products">
+        <h2 class="section-heading text-uppercase">Products</h2>
+        <h3 class="section-subheading text-muted">Ours high quality Products.</h3>
+    </div>
+     <div class="row mt-5">
+    <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle"  src="https://source.unsplash.com/200x200/?Phone gaurd" role="img" />
+      <h2 class="fw-normal"" class="items">Phone Gaurd</h2>
+      <p class="price">$25</p>
+      <button class="btn btn-warning"  onclick="addbutton()">Add to Cart</button>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle"  src="https://source.unsplash.com/200x200/?Phone cover" role="img" />
+      <h2 class="fw-normal"" class="items">Phone Cover</h2>
+      <p class="price">$20</p>
+      <button class="btn btn-warning"  onclick="addbutton()">Add to Cart</button>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle"  src="https://source.unsplash.com/200x200/?Data cable" role="img" />
+      <h2 class="fw-normal" class="items">Data Cable</h2>
+      <p class="price">$30</p>
+      <button class="btn btn-warning"  onclick="addbutton()">Add to Cart</button>
+    </div><!-- /.col-lg-4 -->
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle"  src="https://source.unsplash.com/200x200/?Headphones" role="img" />
+              <h2 class="fw-normal" class="items"">Headphones</h2>
+              <p class="price">$70</p>
+          <button class="btn btn-warning"  onclick="addbutton()">Add to Cart</button>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" src="https://source.unsplash.com/200x200/?Charger" role="img" />
+              <h2 class="fw-nor" class="items"mal">Charger</h2>
+              <p class="price">$40</p>
+          <button class="btn btn-warning"  onclick="addbutton()">Add to Cart</button>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle"  src="https://source.unsplash.com/200x200/?Speakers" role="img" />
+              <h2 class="fw-norm" class="items"al">Speakers</h2>
+              <p class="price">$90</p>
+          <button class="btn btn-warning"  onclick="addbutton()">Add to Cart</button>
+        </div><!-- /.col-lg-4 -->
+        </div>
+</div>
+
+<!-- Cart -->
+<div class="container mt-5 bg-light">
+    <section class="page-section" id="cart">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Cart</h2>
+                <h3 class="section-subheading text-muted">Your Products are here .</h3>
+            </div>
+            <div id="items">
+
+            </div>
+                <!-- Submit Button-->
+                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Buy Now </button></div>
+            </form>
+        </div>
+    </section>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <Script>
+        
+        
+        
+         function addbutton (){
+            let items = document.getElementsByClassName('items').value
+            let price = document.getElementsByClassName('price').value
+
+        let data_items = new Array()
+        data_items = localStorage.getItem('data')?JSON.parse(localStorage.getItem('data')):[]
+
+            data_items.push({
+                "items":items,
+                "price":price
+            })
+
+         }
+
+         const createData =(data_items) => {
+            return`
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                      <h6 class="text-muted">Shirt</h6>
+                      <h6 class="text-black mb-0">${data_items.items}</h6>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                      <button class="btn btn-link px-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        <i class="fas fa-minus"></i>
+                      </button>
+
+                      <input id="form1" min="0" name="quantity" value="1" type="number"
+                        class="form-control form-control-sm" />
+
+                      <button class="btn btn-link px-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                      <h6 class="mb-0">${data_items.price}</h6>
+                    </div>
+            `
+         }
+    </Script>
+</body>
+</html>
